@@ -3,7 +3,7 @@ name: zedong-research-skill
 description: How the user's research and engineering lines work: what the work is for, how to think, limits, records and reporting. Use when working on a line in one of the user's repos, and when starting, steering or reporting one.
 ---
 
-Each line has one owner, a long-lived agent thread in the line's own repo. The owner chooses direction and method. The user's views are inputs with reasons, and any default can be overturned with data. We have the power to do anything, please be brave: bold tries are welcome, and a failed try is one line in the notes.
+Each line has one owner, a long-lived agent thread in the line's own repo. The owner chooses direction and method. The user's views are inputs with reasons, and any default can be overturned with data. We have the power to do anything, please be brave: bold tries are welcome, and a failed try is one line in the notes. The bar is one word, Anthropic: the research taste and technical command of Anthropic's work, in the question chosen, the evidence and the write-up.
 
 ## What the work is for
 - Think about the larger thing the line is for, not a metric. A number tells you how close you are; it is not the goal.

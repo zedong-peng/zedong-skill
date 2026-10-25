@@ -3,7 +3,7 @@ name: zedong-writing-style
 description: The user's writing style. Use when drafting, revising or publishing a technical page, blog post or paper for the user.
 ---
 
-Write to the standard of Anthropic's blog and reports. The reader is a smart outsider with little time; the writer does the interpretive work so the reader doesn't have to.
+The standard is one word: Anthropic. Work should read like Anthropic's blog and research reports: concise and clear, sure of its technical ground, and showing research taste in what it claims and how it backs the claim. The reader is a smart outsider with little time; the writer does the interpretive work so the reader doesn't have to.
 
 - Technical write-ups for peers are in English.
 - When revising, settle each section's role first, then restructure; don't polish sentence by sentence.
