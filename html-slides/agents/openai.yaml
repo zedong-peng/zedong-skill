@@ -1,0 +1,4 @@
+interface:
+  display_name: "HTML Slides"
+  short_description: "Build offline slides from figures and reports"
+  default_prompt: "Use $html-slides to turn this report into a concise, self-contained HTML presentation."

@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="__DESCRIPTION__">
+<meta name="author" content="__AUTHOR__">
+<title>__TITLE__</title>
+<style>
+:root{color-scheme:light;--ink:#141413;--muted:#6b6962;--accent:#a6533c;--orange:#d97757;--line:#e8e6dc;--paper:#fff;--cover-paper:#faf9f5;--scale:1}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{margin:0;width:100%;height:100%;overflow:hidden}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:#141413;color:var(--ink);-webkit-font-smoothing:antialiased}
+button{font:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:5px}
+.viewport{height:calc(100dvh - 64px);display:grid;place-items:center;padding:16px}
+.stage{position:relative;width:calc(1600px * var(--scale));height:calc(900px * var(--scale));box-shadow:0 16px 64px #0003}
+.deck{position:relative;width:1600px;height:900px;transform:scale(var(--scale));transform-origin:0 0;touch-action:pan-y}
+.slide{position:absolute;inset:0;width:1600px;height:900px;background:var(--paper);padding:34px 70px 22px;display:flex;flex-direction:column;overflow:hidden}
+h2{margin:0}
+.slide-body{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;position:relative}
+.slide-footer{flex:0 0 auto;display:flex;flex-direction:column;gap:20px;color:var(--muted);font-size:16px;line-height:1.4;margin-top:22px}
+.source-row{min-height:45px;display:flex;align-items:flex-end;gap:45px}
+.source-row p{margin:0;max-width:1320px}
+.chapter-progress ol{display:grid;grid-template-columns:__CHAPTER_COLUMNS__;gap:25px;list-style:none;margin:0;padding:0}
+.chapter-progress button{border:0;padding:0;background:transparent;color:#928f86;width:100%;display:flex;flex-direction:column;gap:9px;text-align:left;font-size:15px;line-height:1.3}
+.chapter-name{display:flex;gap:9px;min-height:20px}
+.chapter-label{min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.chapter-name.compact{gap:3px;font-size:13px;white-space:nowrap}
+.chapter-number{font-variant-numeric:tabular-nums;font-size:13px;line-height:1.5;flex:none}
+.chapter-meter{display:block;height:3px;width:100%;background:#e8e6dc}
+.chapter-meter>span{display:block;height:100%;background:#b0aea5}
+.chapter.complete button{color:#737066}
+.chapter.current button{color:var(--accent);font-weight:600}
+.chapter.current .chapter-meter>span{background:var(--orange)}
+.chapter-progress button:hover{color:var(--accent)}
+.figure{display:flex;align-items:center;justify-content:center;position:relative;border:0;padding:0;background:transparent;width:100%;height:100%;min-width:0;min-height:0;cursor:zoom-in}
+.figure img{display:block;width:100%;height:100%;object-fit:contain}
+.strip-layout{display:grid;grid-template-rows:125px minmax(0,1fr);gap:28px;width:100%;height:100%}
+.strip-figure{max-width:1100px;justify-self:center}
+.columns{display:grid;grid-template-columns:1fr 1fr;gap:60px;width:100%;height:100%;min-height:0}
+.title-slide{background:var(--cover-paper)}
+.text-content{max-width:1150px;width:100%;font-size:34px;line-height:1.5}
+.text-content p{margin:0 0 1em}
+.text-content p:last-child{margin-bottom:0}
+.cover-content{width:100%;height:100%;display:flex;flex-direction:column;padding-top:130px;padding-bottom:50px}
+.cover-content h1{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:112px;line-height:1.02;letter-spacing:-.045em;margin:0}
+.title-bottom{display:flex;justify-content:space-between;align-items:flex-end;margin-top:auto;padding-top:40px;font-size:22px;line-height:1.5;color:var(--muted)}
+.title-bottom p{margin:0}
+.title-bottom .author{font-size:27px;font-weight:500;color:var(--ink)}
+.title-bottom>p{text-align:right;color:var(--muted)}
+.toolbar{height:64px;position:fixed;bottom:0;left:0;width:100%;display:flex;align-items:center;justify-content:center;gap:14px;color:#faf9f5;background:#141413;padding:8px 18px;z-index:3}
+.toolbar button{background:transparent;border:1px solid #625f56;color:inherit;border-radius:6px;min-width:40px;height:38px;padding:0 12px;font-size:14px;line-height:1}
+.toolbar button:hover{background:#302e28}
+.toolbar button:focus-visible{outline-color:#e9ad94}
+.toolbar button:disabled{opacity:.3;cursor:default}
+.toolbar .nav-arrow{font-size:24px;padding:0;width:40px}
+.toolbar-divider{height:22px;border-left:1px solid #625f56;margin:0 3px}
+.keyboard-hint{font-size:13px;color:#b0aea5;margin-right:24px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+dialog{color:var(--ink);border:1px solid var(--line);border-radius:12px;background:#faf9f5;padding:0;box-shadow:0 15px 80px #0004;max-width:none;max-height:none}
+dialog::backdrop{background:#141413cc}
+.dialog-top{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:18px 24px;border-bottom:1px solid var(--line)}
+.dialog-top h2{font-family:inherit;font-size:24px;font-weight:500;letter-spacing:0}
+.dialog-top p{margin:0;font-size:16px;line-height:1.4;max-width:1000px}
+.dialog-top button{border:1px solid #b0aea5;border-radius:6px;padding:9px 13px;font-size:14px;background:transparent;color:inherit;white-space:nowrap}
+.overview{width:min(1150px,94vw);height:min(820px,90dvh)}
+.overview[open]{display:flex;flex-direction:column}
+.overview-grid{overflow:auto;padding:22px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-content:start}
+.overview-grid button{min-height:150px;border:1px solid #d9d6cc;border-radius:6px;background:white;text-align:left;padding:19px;color:var(--ink)}
+.overview-grid button[aria-current="step"]{border:2px solid var(--accent);background:#f7eee8;padding:18px}
+.overview-grid button span{display:block;color:var(--muted);font-size:12px;letter-spacing:.04em;margin-bottom:12px}
+.overview-grid button strong{display:block;font-family:Georgia,"Times New Roman",serif;font-size:23px;font-weight:400;line-height:1.2}
+.zoom-dialog{width:96vw;height:94dvh}
+.zoom-dialog[open]{display:flex;flex-direction:column}
+.zoom-actions{display:flex;gap:9px;flex:none}
+.zoom-viewport{flex:1;min-height:0;overflow:auto;padding:24px;background:white}
+.zoom-viewport img{display:block;width:100%;height:100%;object-fit:contain;cursor:zoom-in}
+.zoom-viewport.is-zoomed img{width:200%;height:auto;max-width:none;cursor:zoom-out}
+.help-dialog{width:min(560px,90vw)}
+.help-dialog dl{margin:0;padding:20px 28px 28px;display:grid;grid-template-columns:140px 1fr;gap:16px;font-size:17px}
+.help-dialog dt{font-weight:600}
+.help-dialog dd{margin:0}
+.help-dialog p{font-size:15px;color:var(--muted);padding:0 28px 24px;line-height:1.5;margin:0}
+.toast{position:fixed;bottom:82px;left:50%;transform:translateX(-50%);padding:12px 18px;border-radius:6px;background:#fff;color:var(--ink);box-shadow:0 3px 18px #0003;font-size:15px;z-index:8;max-width:90vw}
+@media(max-width:700px){.viewport{padding:6px}.toolbar{gap:7px;padding:8px}.keyboard-hint,.toolbar-divider,#print-button{display:none}.toolbar button{padding:0 9px;flex-shrink:0}#fullscreen{font-size:0;width:40px;padding:0}#fullscreen::after{content:"\26f6";font-size:23px}.overview-grid{grid-template-columns:repeat(2,minmax(0,1fr));padding:12px;gap:9px}.overview-grid button{padding:14px;min-height:130px}.overview-grid button strong{font-size:19px}.dialog-top{padding:14px;gap:10px}.dialog-top p{font-size:13px}.zoom-viewport{padding:10px}.zoom-actions{gap:5px}}
+@media(max-height:500px){.viewport{height:calc(100dvh - 48px);padding:5px}.toolbar{height:48px}.toolbar button{height:32px}}
+@media screen{
+  :root:fullscreen .toolbar{display:none}
+  :root:fullscreen .viewport{height:100dvh}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+@page{size:1600px 900px;margin:0}
+@media print{
+  html,body{width:auto;height:auto;overflow:visible;background:white}
+  .viewport{height:auto;display:block;padding:0}
+  .stage{width:1600px!important;height:auto!important;box-shadow:none}
+  .deck{width:1600px;height:auto;transform:none!important}
+  .slide,.slide[hidden]{position:relative!important;display:flex!important;inset:auto;width:1600px;height:900px;break-after:page;page-break-after:always;break-inside:avoid}
+  .slide:last-child{break-after:auto;page-break-after:auto}
+  .toolbar,dialog,.toast{display:none!important}
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+}
+</style></head><body>
+<main class="viewport" aria-label="__TITLE__ presentation">
+<div class="stage"><div class="deck">__SLIDES__</div></div></main>
+
+<nav class="toolbar" aria-label="Presentation controls">
+  <span class="keyboard-hint">Arrow keys to navigate</span>
+  <button type="button" class="nav-arrow" id="previous" aria-label="Previous slide" title="Previous slide (Left arrow)">&larr;</button>
+  <button type="button" class="nav-arrow" id="next" aria-label="Next slide" title="Next slide (Right arrow)">&rarr;</button>
+  <span class="toolbar-divider" aria-hidden="true"></span>
+  <button type="button" id="overview-button" aria-keyshortcuts="O" title="Slide overview (O)">Overview</button>
+  <button type="button" id="fullscreen" aria-label="Toggle fullscreen" aria-pressed="false" aria-keyshortcuts="F" title="Fullscreen (F)">Fullscreen</button>
+  <button type="button" id="print-button" title="Print all __SLIDE_COUNT__ slides or save as PDF">Print</button>
+  <button type="button" id="help-button" aria-label="Keyboard shortcuts" title="Keyboard shortcuts (?)">?</button>
+</nav>
+<p id="announcement" class="sr-only" aria-live="polite" aria-atomic="true"></p>
+<p id="toast" class="toast" role="status" hidden></p>
+<dialog class="overview" id="overview" aria-labelledby="overview-title">
+  <div class="dialog-top"><h2 id="overview-title">Slide overview</h2><button type="button" data-close="overview" aria-label="Close slide overview">Close</button></div>
+  <div class="overview-grid" id="overview-grid"></div>
+</dialog>
+<dialog class="zoom-dialog" id="zoom" aria-labelledby="zoom-caption">
+  <div class="dialog-top"><p id="zoom-caption"></p><div class="zoom-actions"><button type="button" id="zoom-scale" aria-pressed="false">2x</button><button type="button" data-close="zoom" aria-label="Close enlarged figure">Close</button></div></div>
+  <div class="zoom-viewport" id="zoom-viewport" tabindex="0"><img id="zoom-image" alt=""></div>
+</dialog>
+<dialog class="help-dialog" id="help" aria-labelledby="help-title">
+  <div class="dialog-top"><h2 id="help-title">Presenting the slides</h2><button type="button" data-close="help" aria-label="Close keyboard shortcuts">Close</button></div>
+  <dl><dt>&larr; / &rarr;</dt><dd>Previous / next slide</dd><dt>Space</dt><dd>Next slide</dd><dt>Home / End</dt><dd>First / last slide</dd><dt>F</dt><dd>Toggle fullscreen</dd><dt>O</dt><dd>Open slide overview</dd><dt>Click figure</dt><dd>Enlarge; use 2x for detail</dd><dt>Esc</dt><dd>Close an overlay</dd><dt>Swipe</dt><dd>Navigate on a touch screen</dd></dl>
+  <p>Click a chapter in the slide footer to jump to its first slide. Print includes all __SLIDE_COUNT__ slides. Save as PDF with backgrounds enabled and browser headers and footers disabled.</p>
+</dialog>
+<script>
+(() => {
+  'use strict';
+  const deckTitle = document.title;
+  const slides = [...document.querySelectorAll('.slide')];
+  const previous = document.querySelector('#previous');
+  const next = document.querySelector('#next');
+  const announcement = document.querySelector('#announcement');
+  const overview = document.querySelector('#overview');
+  const grid = document.querySelector('#overview-grid');
+  const zoom = document.querySelector('#zoom');
+  const zoomViewport = document.querySelector('#zoom-viewport');
+  const zoomImage = document.querySelector('#zoom-image');
+  const zoomScale = document.querySelector('#zoom-scale');
+  const help = document.querySelector('#help');
+  const fullscreen = document.querySelector('#fullscreen');
+  let current = 0;
+  let swipeStart = null;
+  let suppressClickUntil = 0;
+  let toastTimer;
+
+  function show(index, updateHash = true) {
+    current = Math.max(0, Math.min(slides.length - 1, index));
+    slides.forEach((slide, i) => {
+      slide.hidden = i !== current;
+      slide.inert = i !== current;
+    });
+    const title = slides[current].dataset.title;
+    previous.disabled = current === 0;
+    next.disabled = current === slides.length - 1;
+    announcement.textContent = `Slide ${current + 1} of ${slides.length}: ${title}`;
+    document.title = current === 0 ? deckTitle : `${current + 1}. ${title} | ${deckTitle}`;
+    [...grid.children].forEach((button, i) => {
+      if (i === current) button.setAttribute('aria-current', 'step');
+      else button.removeAttribute('aria-current');
+    });
+    if (updateHash) history.replaceState(null, '', `#${slides[current].id}`);
+  }
+
+  function fromHash() {
+    const match = location.hash.match(/^#slide-(\d+)$/);
+    show(match ? Number(match[1]) - 1 : 0, false);
+  }
+
+  function resize() {
+    const viewport = document.querySelector('.viewport');
+    const style = getComputedStyle(viewport);
+    const width = viewport.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+    const height = viewport.clientHeight - parseFloat(style.paddingTop) - parseFloat(style.paddingBottom);
+    document.documentElement.style.setProperty('--scale', Math.max(.05, Math.min(width / 1600, height / 900)));
+  }
+
+  function openOverview() {
+    overview.showModal();
+    grid.children[current].focus();
+    grid.children[current].scrollIntoView({block: 'center'});
+  }
+
+  function setZoom(enlarged) {
+    zoomViewport.classList.toggle('is-zoomed', enlarged);
+    zoomScale.textContent = enlarged ? 'Fit' : '2x';
+    zoomScale.setAttribute('aria-pressed', String(enlarged));
+    zoomScale.setAttribute('aria-label', enlarged ? 'Fit figure to window' : 'Enlarge figure to twice the window width');
+    zoomViewport.scrollTo(0, 0);
+  }
+
+  function showToast(message) {
+    const toast = document.querySelector('#toast');
+    clearTimeout(toastTimer);
+    toast.textContent = message;
+    toast.hidden = false;
+    toastTimer = setTimeout(() => { toast.hidden = true; }, 4500);
+  }
+
+  async function toggleFullscreen() {
+    try {
+      if (document.fullscreenElement) await document.exitFullscreen();
+      else if (document.documentElement.requestFullscreen) await document.documentElement.requestFullscreen();
+      else showToast('Use your browser\'s fullscreen command.');
+    } catch (_) { showToast('Use your browser\'s fullscreen command.'); }
+  }
+
+  slides.forEach((slide, i) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    const number = document.createElement('span');
+    number.textContent = `${String(i + 1).padStart(2, '0')} / ${slide.dataset.section}`;
+    const title = document.createElement('strong');
+    title.textContent = slide.dataset.title;
+    button.append(number, title);
+    button.addEventListener('click', () => { show(i); overview.close(); });
+    grid.append(button);
+  });
+
+  previous.addEventListener('click', () => show(current - 1));
+  next.addEventListener('click', () => show(current + 1));
+  document.querySelector('#overview-button').addEventListener('click', openOverview);
+  document.querySelector('#help-button').addEventListener('click', () => help.showModal());
+  document.querySelector('#print-button').addEventListener('click', () => window.print());
+  fullscreen.addEventListener('click', toggleFullscreen);
+  document.addEventListener('fullscreenchange', () => {
+    fullscreen.textContent = document.fullscreenElement ? 'Exit fullscreen' : 'Fullscreen';
+    fullscreen.setAttribute('aria-pressed', String(Boolean(document.fullscreenElement)));
+    resize();
+  });
+
+  document.querySelectorAll('.figure').forEach(button => {
+    button.addEventListener('click', () => {
+      if (Date.now() < suppressClickUntil) return;
+      const image = button.querySelector('img');
+      zoomImage.src = image.src;
+      zoomImage.alt = image.alt;
+      document.querySelector('#zoom-caption').textContent = image.alt;
+      setZoom(false);
+      zoom.showModal();
+    });
+  });
+  zoomScale.addEventListener('click', () => setZoom(!zoomViewport.classList.contains('is-zoomed')));
+  zoomImage.addEventListener('click', () => setZoom(!zoomViewport.classList.contains('is-zoomed')));
+  document.querySelectorAll('[data-close]').forEach(button => {
+    button.addEventListener('click', () => document.getElementById(button.dataset.close).close());
+  });
+  document.querySelectorAll('dialog').forEach(dialog => {
+    dialog.addEventListener('click', event => {
+      const box = dialog.getBoundingClientRect();
+      if (event.target === dialog && (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom)) dialog.close();
+    });
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.altKey || event.ctrlKey || event.metaKey || /^(INPUT|TEXTAREA|SELECT)$/.test(event.target.tagName) || event.target.isContentEditable) return;
+    if (document.querySelector('dialog[open]')) return;
+    const key = event.key.toLowerCase();
+    if (['arrowright','arrowdown','pagedown'].includes(key) || (key === ' ' && event.target.tagName !== 'BUTTON')) {
+      event.preventDefault(); show(current + 1);
+    } else if (['arrowleft','arrowup','pageup'].includes(key)) {
+      event.preventDefault(); show(current - 1);
+    } else if (key === 'home') { event.preventDefault(); show(0);
+    } else if (key === 'end') { event.preventDefault(); show(slides.length - 1);
+    } else if (key === 'f') { event.preventDefault(); toggleFullscreen();
+    } else if (key === 'o') { event.preventDefault(); openOverview();
+    } else if (key === '?' || key === 'h') { event.preventDefault(); help.showModal(); }
+  });
+
+  const deck = document.querySelector('.deck');
+  deck.addEventListener('click', event => {
+    const chapter = event.target.closest('[data-slide-target]');
+    if (chapter && Date.now() >= suppressClickUntil) show(Number(chapter.dataset.slideTarget) - 1);
+  });
+  deck.addEventListener('pointerdown', event => {
+    if (event.pointerType === 'touch') swipeStart = {x:event.clientX, y:event.clientY};
+  }, {passive:true});
+  deck.addEventListener('pointerup', event => {
+    if (!swipeStart) return;
+    const dx = event.clientX - swipeStart.x, dy = event.clientY - swipeStart.y;
+    swipeStart = null;
+    if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+      suppressClickUntil = Date.now() + 400;
+      show(current + (dx < 0 ? 1 : -1));
+    }
+  }, {passive:true});
+  deck.addEventListener('pointercancel', () => { swipeStart = null; });
+  window.addEventListener('resize', resize);
+  window.addEventListener('hashchange', fromHash);
+  fromHash();
+  resize();
+})();
+</script>
+<noscript><p style="position:fixed;top:0;left:0;background:white;padding:15px">Enable JavaScript for slide navigation. Browser Print still includes all slides.</p></noscript>
+</body></html>
