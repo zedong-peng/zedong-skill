@@ -4,7 +4,7 @@ Zedong Peng's Claude Code skills:
 
 - `zedong-research-skill`: how a research or engineering line works, from its goal to its records and reports.
 - `zedong-writing-style`: how to write a technical page, post or paper.
-- `html-slides`: a reusable template and builder for offline, figure-led HTML presentations, with proportional chapter progress and fullscreen controls.
+- `html-slides`: offline, figure-led HTML talks, from an example deck.
 
 They hold taste, not patches: models keep getting stronger, and a rule that corrects today's model soon goes stale.
 
