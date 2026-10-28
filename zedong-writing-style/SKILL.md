@@ -12,4 +12,4 @@ The standard is one word: Anthropic. Work should read like Anthropic's blog and 
 - Derive in the order things are decided, with every unit step shown.
 - Few percentages and ratios; scores are the exception, given as percentages.
 - Figures carry the mechanism, and the text supports them. One color means one thing across all figures.
-- An arXiv paper uses NeurIPS's style in preprint mode, `\usepackage[preprint]{neurips_2026}`: one column, Times, as most of Anthropic's recent arXiv papers are. A version for a venue uses that venue's template.
+- An arXiv paper uses NeurIPS's style in preprint mode, `\usepackage[preprint]{neurips_2026}`: one column, Times, as most of Anthropic's recent arXiv papers are. A version for a venue uses that venue's template. Its figures are drawn in HTML, printed to PDF and included in the LaTeX.
