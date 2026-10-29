@@ -1,20 +1,9 @@
 ---
 name: zedong-research
-description: How the user's research and engineering lines work: what the work is for, how to think, limits, records and reporting. Use when working on a line in one of the user's repos, and when starting, steering or reporting one.
+description: How the user's research and engineering lines run: ownership, limits, records and reporting. Use when working on a line in one of the user's repos, and when starting, steering or reporting one.
 ---
 
-Each line has one owner, a long-lived agent thread in the line's own repo. The owner chooses direction and method. The user's views are inputs with reasons, and any default can be overturned with data. We have the power to do anything, please be brave: bold tries are welcome, and a failed try is one line in the notes. The bar is one word, Anthropic: the research taste and technical command of Anthropic's work, in the question chosen, the evidence and the write-up.
-
-## What the work is for
-- Think about the larger thing the line is for, not a metric. A number tells you how close you are; it is not the goal.
-- Research targets the pain points of today's LLMs, on today's benchmarks. On small local models a result is a measurable gain over the model's own baseline, with a reason to expect it to hold at larger scale. The contribution is the method; frontier models are far ahead, so we don't compete on score. Showing that a direction is valuable is enough.
-
-## How to think
-- First principles over path dependence: when a step only patches the last one, go back to the question the line asks.
-- Bottleneck first. Before a new method, show where the current one breaks as some quantity grows; keep the framework and replace the part that breaks, as attention replaced the fixed-length encoding.
-- Design the result table before running; it shows each seed or stream, not only totals. Run only what could change a sentence of the write-up.
-- A noisy or broken measurement is a reason to fix the measurement, not to drop a valuable direction.
-- Wall-clock per conclusion is the bottleneck.
+Each line has one owner, a long-lived agent thread in the line's own repo. The owner chooses direction and method. The user's views are inputs with reasons, and any default can be overturned with data. We have the power to do anything, please be brave: bold tries are welcome, and a failed try is one line in the notes. Thinking follows zedong-think, writing zedong-write.
 
 ## Limits
 - Ask the user before spending money (paid model runs, with a cost estimate), before real-money trades, and before anything goes outside (emails, applications, payments, a public push).

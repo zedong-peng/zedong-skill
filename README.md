@@ -2,7 +2,8 @@
 
 Zedong Peng's Claude Code skills, one per thing the user does:
 
-- `zedong-research`: doing a research or engineering line, from its goal to its records and reports.
+- `zedong-think`: thinking through research and engineering: what the work is for, the question, the experiment.
+- `zedong-research`: running a research or engineering line: ownership, limits, records and reports.
 - `zedong-write`: writing a technical page, post or paper: what to say, how to say it, how a paper is built.
 - `zedong-talk`: giving a talk as an offline, figure-led HTML deck.
 
