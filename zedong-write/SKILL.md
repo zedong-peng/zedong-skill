@@ -52,3 +52,7 @@ Less is more. A write-up is not better for being complete: each part earns the r
   ```
 
   On Linux the browser is `google-chrome` or `chromium`.
+
+## Talks
+
+A talk has its own skill, zedong-talk, for offline HTML decks. Ask the user whether to use it.
