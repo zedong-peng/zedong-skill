@@ -1,23 +1,8 @@
 ---
 name: zedong-html-fig
-description: How the user's figures are drawn: one HTML file each, at the size it is shown, printed to PDF for LaTeX. Use when drawing a figure for a paper, page or talk.
+description: The user's HTML figure format, with PDF export for LaTeX. Use when creating or revising an HTML figure for a paper, page or talk.
 ---
 
-A figure is one HTML file, drawn at the size it is shown and in the body font of the document it goes into, so its text matches the page. A page or deck embeds the HTML. For LaTeX it is printed to PDF and included at natural size, with no `width=`.
+A figure is one self-contained HTML file. Match its intended display size and the surrounding document's typography so it reads as part of the page.
 
-For a NeurIPS paper the column is 5.5in and the font Times:
-
-```css
-@page { size: 5.5in 4in; margin: 0 }  /* height generous; the crop trims it */
-html, body { margin: 0 }
-body { width: 5.5in; font-family: "Times New Roman", Times, serif;
-       print-color-adjust: exact; -webkit-print-color-adjust: exact }
-```
-
-```sh
-"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless \
-  --no-pdf-header-footer --print-to-pdf=fig.pdf "file://$PWD/fig.html"
-pdfcrop --margins 2 fig.pdf fig.pdf
-```
-
-On Linux the browser is `google-chrome` or `chromium`.
+Pages and HTML decks can embed the figure. For LaTeX, export a tightly cropped PDF at the intended physical size, preserving the typography when included.

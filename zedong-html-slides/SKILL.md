@@ -1,10 +1,10 @@
 ---
 name: zedong-html-slides
-description: Create or edit standalone HTML slide decks from reports and figures, with embedded assets and chapter navigation. Use for browser presentations; preserve a requested Beamer or PowerPoint format.
+description: The user's visual style and reusable template for standalone HTML slide decks. Use when creating or editing an HTML presentation.
 ---
 
-A talk is one HTML file the user can forward and open offline. Start from [the example deck](assets/deck.html): copy it and replace its slides. What the talk says, and leaves out, follows zedong-write; new figures follow zedong-html-fig.
+An HTML deck is one file the user can forward and open offline, with its assets embedded. [The example deck](assets/deck.html) provides a reusable starting point. Editorial taste is in zedong-write; HTML figures use zedong-html-fig.
 
-- A clean cover: title, author, affiliation and date, on warm ivory, the title in Georgia.
-- The original figures carry the talk, embedded with their labels, colours and proportions. Slides have no large headings; a short source note is enough, and text only where it earns its space.
-- Short chapter names in the footer, each as wide as its share of the slides; no page counters. Detail that interrupts the argument goes to an appendix chapter.
+The user prefers a warm ivory cover with a Georgia title, and slides led by the original figures rather than large headings. Short source notes and sparse supporting text leave room for the figures.
+
+Navigation uses short chapter names in the footer, with widths proportional to their share of the slides, instead of page counters.
