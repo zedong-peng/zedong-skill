@@ -1,43 +1,10 @@
 ---
 name: zedong-write
-description: The user's writing: what to say, how to say it, and how a paper is built. Use when drafting, revising or publishing a technical page, blog post or paper for the user, or deciding what a talk says.
+description: The user's editorial taste for technical writing. Use when drafting or revising a technical page, blog post or paper for the user.
 ---
 
-The standard is one word: Anthropic. Work should read like Anthropic's blog and research reports: concise and clear, sure of its technical ground, and showing research taste in what it claims and how it backs the claim. The reader is a smart outsider with little time; the writer does the interpretive work so the reader doesn't have to.
+The user's reference is Anthropic's blog and research reports: concise, technically assured, with research taste in the claims and the evidence chosen to support them.
 
-## What to say
+Less is more. Prefer a focused account of what is new and hard over exhaustive coverage. Write for a smart outsider with little time.
 
-Less is more. A write-up is not better for being complete: each part earns the reader's attention, or it goes.
-
-- Spend words on what is new and hard. What the reader would assume, or grasps at once, gets a clause or nothing.
-- What a figure can show accurately, a figure shows: easy to read, not simplistic. The text supports it.
-- Detail that backs a claim but is not the claim goes to the appendix.
-- Don't argue that a part is worth it. The result shows it, or the part goes.
-- What the approach entails is stated, not apologized for. A choice made for the setting is a decision for that setting, not a limitation or a roadmap.
-
-  BAD
-
-  > Limitations: the design supports only batch size 1. Batched prefill and multiple sequences are left to future work.
-
-  GOOD
-
-  > We target single-stream decoding at batch 1, and spend the chip's limited resources there.
-
-## How to say it
-
-- Technical write-ups for peers are in English.
-- When revising, settle each section's role first, then restructure; don't polish sentence by sentence.
-- Define each term at first use, or rename it. One word, one meaning.
-- One metric per quantity. Say whether each number is measured, derived or nominal.
-- Derive in the order things are decided, with every unit step shown.
-- Few percentages and ratios; scores are the exception, given as percentages.
-- One color means one thing across all figures.
-
-## Papers
-
-- On arXiv: NeurIPS's style in preprint mode, `\usepackage[preprint]{neurips_2026}`, one column, Times. A version for a venue uses that venue's template.
-- Figures follow zedong-html-fig.
-
-## Talks
-
-A talk has its own skill, zedong-html-slides, for offline HTML decks. Ask the user whether to use it.
+Default to English for technical writing addressed to peers.
