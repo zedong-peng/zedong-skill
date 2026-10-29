@@ -1,5 +1,5 @@
 ---
-name: zedong-writing-style
+name: zedong-write
 description: The user's writing: what to say, how to say it, and how a paper is built. Use when drafting, revising or publishing a technical page, blog post or paper for the user, or deciding what a talk says.
 ---
 

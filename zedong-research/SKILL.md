@@ -1,5 +1,5 @@
 ---
-name: zedong-research-skill
+name: zedong-research
 description: How the user's research and engineering lines work: what the work is for, how to think, limits, records and reporting. Use when working on a line in one of the user's repos, and when starting, steering or reporting one.
 ---
 
