@@ -1,11 +1,10 @@
 # zedong-skill
 
-Zedong Peng's Claude Code skills:
+Zedong Peng's Claude Code skills, one per thing the user does:
 
-- `zedong-research-skill`: how a research or engineering line works, from its goal to its records and reports.
-- `zedong-writing-style`: how to write a technical page, post or paper.
-- `anthropic-paper-style`: a paper's structure, template and figures, after Anthropic's.
-- `html-slides`: offline, figure-led HTML talks, from an example deck.
+- `zedong-research-skill`: doing a research or engineering line, from its goal to its records and reports.
+- `zedong-writing-style`: writing a technical page, post or paper: what to say, how to say it, how a paper is built.
+- `html-slides`: giving a talk as an offline, figure-led HTML deck.
 
 They hold taste, not patches: models keep getting stronger, and a rule that corrects today's model soon goes stale.
 
