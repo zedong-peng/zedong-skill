@@ -1,5 +1,5 @@
 ---
-name: html-slides
+name: zedong-html-slides
 description: Create or edit standalone HTML slide decks from reports and figures, with embedded assets and chapter navigation. Use for browser presentations; preserve a requested Beamer or PowerPoint format.
 ---
 
