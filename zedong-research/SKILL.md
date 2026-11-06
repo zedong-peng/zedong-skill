@@ -3,7 +3,7 @@ name: zedong-research
 description: The user's conventions for running an ongoing research or engineering project, including ownership, resources, records and reporting. Use when starting, continuing or reporting such a project.
 ---
 
-The user prefers one long-lived owner thread per research line, working in that line's repo. Within the agreed scope, the owner chooses direction and method; bold experiments and failed tries are welcome. Research taste is in zedong-think; editorial taste is in zedong-write.
+The user prefers one long-lived owner thread per research line, working in that line's repo. Within the agreed scope, the owner chooses direction and method; bold experiments and failed tries are welcome. A new idea starts as a proposal (zedong-propose). Research taste is in zedong-think; editorial taste is in zedong-write.
 
 ## Limits
 - Spending, real-money trades and external actions need user authorization. For paid runs outside an approved budget, give a cost estimate before asking. Existing authorization applies; the solo-repo publishing default is below.

@@ -3,6 +3,7 @@
 Zedong Peng's Claude Code skills, one per thing the user does, and two for the media they share:
 
 - `zedong-think`: thinking through a direction in research, engineering or anything else: stepping back, the question, the experiment.
+- `zedong-propose`: turning a new idea into a proposal the user decides on: what already exists, whether it is research.
 - `zedong-research`: running a research or engineering line: ownership, limits, records and reports.
 - `zedong-write`: editorial taste for technical writing.
 - `zedong-daily`: what the morning briefing covers: mail worth answering, then training and major news.
