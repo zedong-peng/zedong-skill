@@ -11,7 +11,7 @@ The user prefers one long-lived owner thread per research line, working in that 
 - Heavy work runs on servers, never on the laptop.
 
 ## Records and reporting
-- The repo holds the line: `CLAUDE.md` has the goal, user-confirmed decisions with their reasons and dates, and project conventions; `notes/` has findings and the owner's working decisions. Keep the current state in these files; history is git.
+- The repo holds the line: `CLAUDE.md` has the goal, user-confirmed decisions with their reasons and dates, and project conventions, written few and precise, with stale rules deleted; `notes/` has findings and the owner's working decisions. Keep the current state in these files; history is git.
 - Our results stay in the repo. The llmwiki (private) collects only other people's work we actually read.
 - On the user's solo repos, the default is to commit and push to main.
 - Prefer brief reports: the result in a line or two, followed by anything the user needs to act on. Routine decisions within the agreed scope belong in the repo.
