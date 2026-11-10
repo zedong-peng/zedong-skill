@@ -5,6 +5,8 @@ description: The user's editorial taste for technical writing. Use when drafting
 
 The user's reference is Anthropic's blog and research reports: concise, technically assured, with research taste in the claims and the evidence chosen to support them.
 
-Less is more. Prefer a focused account of what is new and hard over exhaustive coverage. Write for a smart outsider with little time. Use few percentages and multipliers; when a table shows the numbers, let readers read it.
+Less is more. Prefer a focused account of what is new and hard over exhaustive coverage. Write for a smart outsider with little time.
+
+Figures and tables speak for the work. Cut prose and caption notes that repeat what a figure, a table's headers or a nearby command already shows, and use few percentages and multipliers; let readers read the numbers. Leave out what was not done or not measured unless a reader would be misled. Other people's work gets only what places yours, not a description of its own.
 
 Default to English for technical writing addressed to peers.
