@@ -9,4 +9,6 @@ Less is more. Prefer a focused account of what is new and hard over exhaustive c
 
 Figures and tables speak for the work. Cut prose and caption notes that repeat what a figure, a table's headers or a nearby command already shows, and use few percentages and multipliers; let readers read the numbers. Leave out what was not done or not measured unless a reader would be misled. Other people's work gets only what places yours, not a description of its own.
 
+Restraint is the aesthetic, in words and in design. Someone wearing more than a few colors looks untasteful; so does a page with many fonts, sizes, colors or levels of hierarchy. There is no fixed count, only no excess and no clutter. Fonts, colors and heading levels are chosen by the same rule.
+
 Default to English for technical writing addressed to peers.
