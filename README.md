@@ -13,7 +13,7 @@ Zedong Peng's Claude Code skills, one per thing the user does, and three for the
 - `zedong-quant-note`: recording a strategy, paper or experiment in the quant research repo, judged before it is written down.
 - `zedong-html-fig`: drawing a figure in HTML, at print size, for a paper, page or talk.
 - `zedong-html-slides`: giving a talk as an offline, figure-led HTML deck.
-- `zedong-html-blog`: a standalone HTML blog or survey page, styled after an Anthropic launch post.
+- `zedong-html-blog`: a standalone HTML blog or survey page, in the site's theme, which follows Anthropic's articles.
 
 They hold taste, not patches: models keep getting stronger, and a rule that corrects today's model soon goes stale.
 
