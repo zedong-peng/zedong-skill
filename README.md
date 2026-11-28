@@ -1,6 +1,6 @@
 # zedong-skill
 
-Zedong Peng's Claude Code skills, one per thing the user does, and three for the media they share:
+Zedong Peng's agent skills, one per thing the user does, and three for the media they share:
 
 - `zedong-think`: thinking through a direction in research, engineering or anything else: stepping back, the question, the experiment.
 - `zedong-propose`: turning a new idea into a proposal the user decides on: what already exists, whether it is research.
@@ -18,4 +18,4 @@ Zedong Peng's Claude Code skills, one per thing the user does, and three for the
 
 They hold taste, not patches: models keep getting stronger, and a rule that corrects today's model soon goes stale.
 
-To install, clone the repo and run `./install.sh`. It links each skill into `~/.claude/skills`, or into the directory given as its argument, so a change here takes effect in the next session.
+To install, clone the repo and run `./install.sh`. It links each skill into the user skill directories of Claude Code, Codex and Gemini, or only into the directory given as its argument, so a change here takes effect in the next session.
